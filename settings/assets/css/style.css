@@ -1,0 +1,219 @@
+/* 
+	Yahoo CSS Reset 
+	http://perishablepress.com/a-killer-collection-of-global-css-reset-styles/
+*/
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {padding: 0; margin: 0;}
+/*table {border-collapse: collapse; border-spacing: 0;}*/
+fieldset,img {border: 0;}
+address,caption,cite,code,dfn,em,strong,th,var {font-weight: normal;font-style: normal;}
+ol,ul {list-style: none;}
+caption,th {text-align: left;}
+h1,h2,h3,h4,h5,h6 {font-weight: normal; font-size: 100%;}
+q:before,q:after {content:'';}
+abbr,acronym { border: 0;}
+
+.clear {clear:both;}
+.clear:after{
+	content: "";
+	display:table;
+	height:0px;
+	width: 100%;
+}
+
+html {
+	font-family: Hevletica, Arial;
+	font-size:13px;
+}
+strong {font-weight: bold;}
+ul {list-style-type: disc; list-style-position: inside; padding-left: 40px; margin: 15px 0px;}
+ol {list-style-type: decimal; list-style-position: inside; padding-left: 40px; margin: 15px 0px;}
+ul ul, ol ul {list-style-type: circle; list-style-position: inside; margin-left: 15px;}
+ol ol, ul ol {list-style-type: lower-latin; list-style-position: inside; margin-left: 15px;}
+p {margin: 5px 0px;}
+blockquote {margin: 15px 40px;}
+
+#content{padding:20px;}
+#footer {padding: 0px 20px;}
+#error{padding: 0px 20px;}
+
+.breadcrumbs{margin:0px 20px; padding:10px; background:#eee; border-radius:5px; border:1px solid #ccc; font-size:14px;}
+.breadcrumbs a {text-decoration:none; color:#4e0000;}
+.breadcrumbs a:hover{text-decoration:underline;}
+.breadcrumbs span{color:#555;}
+
+.error {color: red;}
+
+.hint {color: #999;}
+.link-button{
+	border: 1px solid #ccf;
+	border-radius: 3px;
+	background:#eef;
+	color: #4e0000;
+	text-decoration:none;
+	padding: 5px;
+	margin:0 0 20px 0;
+	display:inline-block;
+	cursor: pointer;
+}
+.link-button:hover{background:#f3f3ff;}
+
+.ajax-loading {width:16px; height:16px; background-image: url("/images/ajax-loader.gif"); background-repeat: no-repeat;}
+
+table.padding-5px-10px-5px-0px td{padding: 5px 10px 5px 0;}
+
+/* Пейджер
+---------------------------------------------------------------*/
+.urv-pager a {padding:5px; text-decoration:none;}
+.urv-pager a:hover{background: #eee;}
+.urv-pager .pager-info {margin-right:20px; color:#a44;}
+.urv-pager .pager-current-page {background: #eee; padding:5px;}
+.urv-pager .pager-info {float:left; margin-left:10px;}
+.urv-pager .pager-links {float:left; margin-left:180px;}
+
+
+/* Flash-сообщения
+---------------------------------------------------------------*/
+.flash-success,
+.flash-error,
+.flash-info,
+.flash-warning {
+	margin: 0 20px; padding: 5px; border-radius: 0px; box-shadow: 0 0 5px 2px #CCCCCC; margin-top:20px;
+}
+.flash-icon-success,
+.flash-icon-error,
+.flash-icon-info,
+.flash-icon-warning {
+	width:30px; height:30px; float:left; margin-right:10px;
+	background: url("/css/urv-sprites.png") no-repeat;
+}
+.flash-success  {border:1px solid #4f8a10; background:#dff2bf;color:#104000;}
+.flash-error      {border:1px solid #a8000c; background:#ffbaba;color:#600010;}
+.flash-info        {border:1px solid #00529b; background:#bde5f8;color:#004090;}
+.flash-warning  {border:1px solid #9f6000; background:#feefb3;color:#703000;}
+.aflash-icon-success{background-position: 0px -140px;}
+.flash-icon-error      {background-position: -159px -140px;}
+.flash-icon-info        {background-position: -60px -140px;}
+.flash-icon-warning  {background-position: -90px -140px;}
+
+
+/* Форматированные элементы формы
+---------------------------------------------------------------*/
+.format p {margin: 10px 0;}
+.format h1, .format h2, .format h3, .format h4, .format h5, .format h6 {font-weight:normal;color:#a33;}
+.format h1 {font-size:2em;line-height:1;margin-bottom:0.5em;}
+.format h2 {font-size:1.6em;margin-bottom:0.75em;}
+.format h3 {font-size:1.4em;line-height:1;margin-bottom:1em;}
+.format h4 {font-size:1.2em;line-height:1.25;margin-bottom:1.25em;}
+.format h5 {font-size:1em;font-weight:bold;margin-bottom:1.5em;}
+.format h6 {font-size:1em;font-weight:bold;}
+
+.format label[for] {font-style:italic;font-weight:bold; padding:0 2px 0 0; color:#001744;}
+
+.format input[type="text"],
+.format input[type="password"],
+.format textarea,
+.format select {
+	border:1px solid #bbb;
+}
+
+.format input[type="text"], .format input[type="password"] {
+	padding: 2px 5px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+	color: #555;
+	font-size: 14px;
+    line-height: 1.42857;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+.format input[type="password"] {
+	color:#000;
+	font-weight:normal;
+	font-style:normal;
+}
+.format input[type="text"]:focus, .format input[type="password"]:focus {
+	border-color: #66afe9;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);
+	outline: 0 none;
+}
+
+/* Немного из Twitter Bootstrap
+---------------------------------------------------------------*/
+.btn-primary.active,
+.btn-warning.active,
+.btn-danger.active,
+.btn-success.active,
+.btn-info.active,
+.btn-inverse.active {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.btn-primary {
+	font-weight: bold;
+	padding: 4px 12px;
+	margin-bottom: 0;
+	*margin-left: .3em;
+	font-size: 14px;
+	line-height: 20px;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	border: 1px solid #cccccc;
+	*border: 0;
+	border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	border-bottom-color: #b3b3b3;
+	-webkit-border-radius: 4px;
+	 -moz-border-radius: 4px;
+		  border-radius: 4px;
+	*zoom: 1;
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+	 -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+		  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+
+	color: #ffffff;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	background-color: #006dcc;
+	*background-color: #0044cc;
+	background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
+	background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
+	background-image: -o-linear-gradient(top, #0088cc, #0044cc);
+	background-image: linear-gradient(to bottom, #0088cc, #0044cc);
+	background-repeat: repeat-x;
+	border-color: #0044cc #0044cc #002a80;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+	color: #ffffff;
+	background-color: #0044cc;
+	*background-color: #003bb3;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+	text-decoration: none;
+	background-position: 0 -15px;
+	-webkit-transition: background-position 0.1s linear;
+	 -moz-transition: background-position 0.1s linear;
+	   -o-transition: background-position 0.1s linear;
+		  transition: background-position 0.1s linear;
+}
+.btn-primary:focus {
+	outline: thin dotted #333;
+	outline: 5px auto -webkit-focus-ring-color;
+	outline-offset: -2px;
+}
+.btn-primary:active {
+	background-color: #003399 \9;
+	background-image: none;
+	outline: 0;
+	-webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+	 -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+		  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+
+

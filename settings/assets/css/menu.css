@@ -1,0 +1,362 @@
+/* Базовый стиль
+
+.urv-menu li { list-style: none;   }
+.urv-menu ul { padding-left: 0;    }
+.urv-menu>ul { position: relative; }
+.urv-menu a  { text-decoration: none; padding: 5px; }
+
+.urv-menu>ul li{ padding-right:5px; display: block; float: left; }
+.urv-menu>ul>li ul { position: absolute; left: 0; width: 800px; }
+.urv-menu>ul>li ul {display: none;}
+
+$('.urv-menu li').on('mouseenter', function(){
+	$(this).children('ul').show();
+}).on('mouseleave', function(){
+	$(this).children('ul').hide();
+});
+----------------------------------------------------------------*/
+	.urv-menu-wrapper {/*position: relative;*/ /*height:260px;*/}
+	.urv-menu li, .user-menu li { list-style: none;}
+	.urv-menu ul, .user-menu ul { padding-left: 0; margin:0;}
+	.urv-menu a, .user-menu a  { text-decoration: none; display:block;}
+	
+	.urv-menu>ul li{
+		display: block;
+		float: left;
+	}
+
+	.urv-menu>ul>li ul {
+		position: absolute;
+		left: 0;
+	}
+	
+	.urv-menu>ul>li ul,
+	.urv-menu ul.urv-menu-level-3.urv-menu-level-3-reports,
+	.urv-menu ul.urv-menu-level-3 {
+		display: none;
+	}
+
+/* Иконки
+----------------------------------------------------------------*/
+.menu-icon-table,
+.menu-icon-report,
+.menu-icon-mail,
+.menu-icon-settings,
+.menu-icon-modules,
+.menu-icon-exit,
+.menu-icon-excel-2002,
+.menu-icon-excel-2007,
+.menu-icon-send-mail,
+.search-employee,
+.urv-menu-label-menu,
+.date-arrow-left,
+.date-arrow-right,
+.go-to-date,
+.menu-icon-table-mini,
+.menu-icon-report-mini,
+.menu-icon-mail-mini,
+.menu-icon-settings-mini,
+.menu-icon-modules-mini,
+.menu-icon-exit-mini,
+.urv-menu-icon-sticked,
+.urv-menu-icon-unsticked,
+.manager-info,
+.manager-info-mini,
+.icon-caution,
+.icon-warning,
+.icon-male,
+.icon-female,
+.icon-accept, .icon-accept-mini, .icon-reject, .icon-reject-mini, .icon-undo, .icon-undo-mini, .icon-email, .icon-email-mini
+{
+	background: url("/css/urv-sprites.png") no-repeat;
+}
+
+.menu-icon-table           {background-position:  0px   -200px; width:60px; height:55px;}
+.menu-icon-report         {background-position: -63px  -200px; width:55px; height:55px;}
+.menu-icon-mail             {background-position: -118px -200px; width:65px; height:55px;}
+.menu-icon-settings     {background-position: -185px -200px; width:54px; height:55px;}
+.menu-icon-modules       {background-position: -240px -200px; width:65px; height:55px;}
+.menu-icon-exit             {background-position: -310px -200px; width:50px; height:55px;}
+.menu-icon-excel-2002 {background-position:  0px   -260px; width:40px; height:40px;}
+.menu-icon-excel-2007 {background-position: -39px  -260px; width:40px; height:40px;}
+.menu-icon-send-mail   {background-position: -79px  -260px; width:40px; height:40px;}
+.menu-icon-table-mini       {background-position:  0px   -350px; width:43px; height:40px;}
+.menu-icon-report-mini     {background-position: -43px  -350px; width:38px; height:40px;}
+.menu-icon-mail-mini         {background-position: -80px -350px;  width:45px; height:40px;}
+.menu-icon-settings-mini {background-position: -124px -350px; width:38px; height:40px;}
+.menu-icon-modules-mini   {background-position: -161px -350px; width:44px; height:40px;}
+.menu-icon-exit-mini         {background-position: -197px -350px; width:40px; height:40px;}
+.urv-menu-icon-sticked     {background-position: -299px -350px; width:32px; height:40px;}
+.urv-menu-icon-unsticked {background-position: -263px -350px; width:32px; height:40px;}
+
+.search-employee {background-position: 0px -300px; width:150px; height:45px; display:block; }
+.urv-menu-label-menu {background-position: -502px -300px; width:88px; height:22px; display:block; }
+
+.date-arrow-left{background-position: -155px -300px; width:40px; height:25px; display:block; }
+.date-arrow-right{background-position: -195px -300px; width:40px; height:25px; display:block; }
+.go-to-date{background-position: -360px -300px; width:129px; height:33px; display:block; border:none;}
+
+.manager-info           {background-position: 0px -435px;   width:45px; height:45px; display: block;}
+.manager-info-mini {background-position: -45px -432px; width:30px; height:30px; display: block;}
+.icon-caution {background-position: -84px -435px;  width:30px; height:30px; display: block;}
+.icon-warning {background-position: -128px -432px; width:40px; height:40px; display: block;}
+.icon-male     {background-position: -187px -435px; width:24px; height:24px; display: block;}
+.icon-female {background-position: -220px -435px; width:24px; height:24px; display: block;}
+
+.icon-accept {background-position: -258px -435px; width:31px; height:33px; display: block;}
+.icon-reject {background-position: -293px -435px; width:31px; height:33px; display: block;}
+.icon-undo     {background-position: -330px -435px; width:31px; height:33px; display: block;}
+.icon-email   {background-position: -364px -435px; width:35px; height:33px; display: block;}
+.icon-accept-mini {background-position: -409px -435px; width:16px; height:18px; display: block;}
+.icon-reject-mini {background-position: -431px -435px; width:16px; height:18px; display: block;}
+.icon-undo-mini     {background-position: -451px -435px; width:16px; height:18px; display: block;}
+.icon-email-mini   {background-position: -472px -435px; width:16px; height:18px; display: block;}
+
+/* Меню
+----------------------------------------------------------------*/
+.main-menu a {text-decoration:none; font-family: Hevletica, Arial; color:#121284; font-size:13px;}
+
+.main-menu table{margin:0px; width:100%;}
+.main-menu table td{padding:0px; vertical-align:middle;}
+
+/* Меню (зафиксировать вверху экрана)
+----------------------------------------------------------------*/
+.urv-menu-icon-sticked, .urv-menu-icon-unsticked {cursor:pointer;}
+.urv-menu-icon-sticked, .urv-menu-icon-unsticked:hover{background-color:#e0e0e0;}
+
+/* Меню (выбор диапазона дат и отдела)
+----------------------------------------------------------------*/
+.date-department-menu {background: #e7e8ff; border-bottom:1px solid #21218d;}
+.date-department-menu>form{margin:0 auto; padding:5px 20px 5px 20px;}
+
+.date-arrow-left,
+.date-arrow-right,
+.go-to-date,
+.main-menu .from-date,
+.main-menu .to-date {
+	float:left;
+}
+
+table.main-menu-date {width: 518px;}
+.main-menu-col-1 {width: 40px;}
+.main-menu-col-2 {width: 90px;}
+.main-menu-col-3 {width: 40px;}
+.main-menu-col-4 {width: 100px;}
+.main-menu-col-5 {color:#001246; font-weight:bold; font-size:14px; text-align:center;}
+.main-menu-col-6 {width: 100px;}
+.main-menu-col-7 {width: 130px;}
+
+.month{height:25px; display:block; width:90px;}
+.date-department-menu .from-date, .date-department-menu .to-date{
+	width: 75px; padding:2px 5px; font-size:14px;
+}
+.date-department-menu .from-date {margin-left:10px;}
+.date-department-menu .to-date {margin-right:10px;}
+
+.date-department-menu fieldset {border:2px solid #21218d; padding:0px 5px 3px 5px; border-radius: 4px;}
+.date-department-menu legend {margin-left: 180px; color: #21218d; font-weight:bold; padding:0 7px;}
+.date-department-menu .fieldset-date{width:525px;float:left;}
+.date-department-menu .fieldset-department{width:400px;float:left;margin-left:10px;height:47px;padding-top:3px;}
+.main-menu-department{width:400px;}
+
+.date-arrow-left, .date-arrow-right, .go-to-date {cursor:pointer;}
+.date-department-menu .main-menu-col-1:hover, .date-department-menu .main-menu-col-3:hover, .date-department-menu .main-menu-col-7:hover {background:#d0d0ff;}
+
+
+/* Меню администратора
+----------------------------------------------------------------*/
+.urv-menu{
+	z-index:5;
+	background: #f5f2f2; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f5f2f2 1%, #c5c3c3 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#f5f2f2), color-stop(100%,#c5c3c3)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #f5f2f2 1%,#c5c3c3 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #f5f2f2 1%,#c5c3c3 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #f5f2f2 1%,#c5c3c3 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #f5f2f2 1%,#c5c3c3 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f2f2', endColorstr='#c5c3c3',GradientType=0 ); /* IE6-9 */
+}
+.urv-menu i {display:block; margin:0 auto;}
+.urv-menu>ul{display:block; width:100%; height:45px; margin:0 auto;}
+
+.urv-menu>ul>li {width:90px; padding-right: 10px;}
+.urv-menu>ul>li>a.urv-menu-hovered{background:#c3bcc6; height:40px;}
+.urv-menu>ul>li>a:hover{background:#c3bcc6;}
+.urv-menu>ul>li>a{display:block; padding:0px; padding-top: 5px;}
+.urv-menu>ul>li>a>div{font-weight:bold; font-style:italic; color:#000000; text-align:center;}
+
+.urv-menu-line {background:#adadb6; height:1px; }
+.urv-menu-border-line{background:#858585; position:absolute; height:1px; width:100%; top:117px; left:0px;}
+.urv-menu-line-blue {
+	position:absolute; height:3px; width:100%; top:111px; left:0px;
+	background: -moz-linear-gradient(left,  rgba(236,233,233,0) 0%, rgba(0,11,91,1) 50%, rgba(236,233,233,0) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(236,233,233,0)), color-stop(50%,rgba(0,11,91,1)), color-stop(100%,rgba(236,233,233,0))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  rgba(236,233,233,0) 0%,rgba(0,11,91,1) 50%,rgba(236,233,233,0) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  rgba(236,233,233,0) 0%,rgba(0,11,91,1) 50%,rgba(236,233,233,0) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  rgba(236,233,233,0) 0%,rgba(0,11,91,1) 50%,rgba(236,233,233,0) 100%); /* IE10+ */
+	background: linear-gradient(to right,  rgba(236,233,233,0) 0%,rgba(0,11,91,1) 50%,rgba(236,233,233,0) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ece9e9', endColorstr='#00ece9e9',GradientType=1 ); /* IE6-9 */
+}
+
+.urv-menu-link:hover, .search-employee-hover:hover, .urv-menu-open:hover {background-color:#e0e0e0; cursor:pointer;}
+.urv-menu-link {padding:12px; display:inline-block;}
+
+/* Выбранные пункты меню */
+.urv-menu li.active>a {background:#d3ccd6;}
+.urv-menu-level-2 li.active>a {background:#9f9f9f;}
+.urv-menu-level-3 li.active>a {background:#3f3f3f;}
+
+/* Меню администратора (2 уровень)
+----------------------------------------------------------------*/
+.urv-menu .urv-menu-level-2 {
+	width:100%;
+	min-width: 1250px;
+	height:70px;
+	/*padding-left:10px;*/
+	border-top:1px solid #000;
+	background:#b3b3b3;
+	z-index:6;
+}
+/* Дополнительный невидимый отступ, чтобы меню не закрывалось при наведении мыши под меню */
+.urv-menu-level-2:after {
+    content: "";
+    display: block;
+    height: 150px;
+    width: 100%;
+}
+.urv-menu-level-2>li {width: 110px;}
+.urv-menu-level-2>li>a {height:50px; padding:10px; color:#000000;}
+.urv-menu-level-2>li>a.urv-menu-hovered{background:#8f8f8f;}
+.urv-menu-level-2>li>a:hover{background:#8f8f8f;}
+.urv-menu-level-2>li:before{
+	content: "";
+	display: block;
+	background:url("/css/urv-sprites.png") no-repeat;
+	/*background-position: -239px -350px;*/
+	background-position: -377px -197px;
+	width: 4px;
+	height: 70px;
+	float:left;
+}
+
+.urv-menu-level-2>li:last-child:after {
+	content: "";
+	display: block;
+	background:url("/css/urv-sprites.png") no-repeat;
+	background-position: -377px -197px;
+	width: 4px;
+	height: 70px;
+	float:right;
+	margin-top: -70px;
+}
+
+.urv-menu-level-2>li:hover:last-child:after{margin-top: -70px;}
+.urv-menu-level-2-reports.urv-menu-level-2>li:hover:last-child:after{margin-top: -120px;}
+
+/* Меню администратора (3 уровень)
+----------------------------------------------------------------*/
+.urv-menu .urv-menu-level-3 {background: #4d4d4d; /*padding-left:10px;*/ display:block; width:100%; height:70px; border-top:1px solid #171717; border-bottom:1px solid #171717;}
+.urv-menu-level-3 .menu-icon-excel-2002,
+.urv-menu-level-3 .menu-icon-excel-2007,
+.urv-menu-level-3 .menu-icon-send-mail {
+	float:left;
+}
+.urv-menu-level-3>li{width:125px; height:70px;}
+.urv-menu-level-3>li>a{color:#ffffff; height:50px; padding:10px; }
+.urv-menu-level-3>li>a:hover{background:#333333;}
+.urv-menu-level-3>li:before{
+	content: "";
+	display: block;
+	background:url("/css/urv-sprites.png") no-repeat;
+	background-position: -390px -206px;
+	width: 8px;
+	height: 70px;
+	float:left;
+	margin-top: 10px;
+}
+
+.urv-menu-level-3>li:last-child:after {
+	content: "";
+	display: block;
+	background:url("/css/urv-sprites.png") no-repeat;
+	background-position: -390px -206px;
+	width: 8px;
+	height: 70px;
+	float:right;
+	margin-top: -60px;
+}
+
+/* Для пункта "Отчеты по сотрудникам" высоту делаю 50px */
+.urv-menu .urv-menu-level-3.urv-menu-level-3-reports {position:static; padding-left:0px; width:500px; height:50px; margin-left:-130px;}
+.urv-menu-level-3-reports.urv-menu-level-3>li{height:50px; width:125px;}
+.urv-menu-level-3-reports.urv-menu-level-3>li>a{height:30px;}
+.urv-menu-level-3-reports>li:hover {height:30px;}
+.urv-menu-level-3-reports.urv-menu-level-3>li:last-child:after{height:50px;margin-top:-50px;}
+.urv-menu-level-3-reports.urv-menu-level-3>li:before{height:50px; margin-top: 0px;}
+
+
+/* Дополнительный невидимый отступ, чтобы меню не закрывалось при наведении мыши под меню */
+.urv-menu-level-3:after{display:block; width:100%; height:150px; content:"";}
+
+/* Тень под меню */
+.urv-menu, .urv-menu-level-1, .urv-menu-level-2, .urv-menu-level-3{
+	box-shadow: 0 6px 15px #000000;
+}
+
+
+/* Меню пользователя
+----------------------------------------------------------------*/
+.user-menu li { list-style: none;}
+.user-menu ul { padding-left: 0; margin:0;}
+.user-menu a  { text-decoration: none; display:block;}
+	
+.user-menu>ul {
+	list-style: none outside none;
+	padding: 0;
+	
+	display: block;
+	background: #fafaff;
+	border-bottom: 1px solid #aac;
+	height:42px; /* для ie7 */
+}
+.user-menu>ul:after{
+	display: table;
+	clear: both;
+	content: "";
+}
+
+.user-menu li {
+	display: block;
+	float: left;
+}
+.user-menu li.pre-last {
+	float: right;
+}
+.user-menu li.last {
+	float: right;
+}
+
+.user-menu li.active a {
+	background: #f5f5f5;
+}
+
+.user-menu a {
+	text-decoration: none;
+	display: block;
+    color: #a33;
+    padding: 13px 35px;
+	font-size: 14px;
+}
+.user-menu a:hover {
+	background: #eeeeee !important;
+}
+
+
+.user-menu li.pre-last {
+	border-right: none;
+}
+.user-menu li.last {
+	border-left: 1px solid #ddd;
+}
+
+.navbar-toggle {display: none;}

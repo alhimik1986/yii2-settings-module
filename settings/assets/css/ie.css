@@ -1,0 +1,13 @@
+/* Фиксы для ie7
+---------------------------------------------------------------*/
+table.urv-table {border-collapse: collapse !important;}
+/*table.urv-table{background-color: #bfdcff;}*/
+table.urv-table thead tr th {border-left: none !important;}
+.urv-table th {background-color: #bfdcff !important; border-color: #4382e6;}
+.urv-table .no-top-border-in-child th {background-color: #ddd !important;}
+
+.dataTables_wrapper .top {height: 30px;}
+.dataTables_wrapper .bottom {height: 30px;}
+
+.ColVis_MasterButton {overflow:visible} /* автоматическа ширина для кнопки */
+.ajax-form {overflow:visible !important;}

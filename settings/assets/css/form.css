@@ -1,0 +1,316 @@
+
+/*========== Стандартная форма для УРВ =========*/
+
+/* Спрайты для формы
+---------------------------------------------------------------*/
+.ajax-form-close,
+/*.ajax-form-button-success,
+.ajax-form-button-cancel,
+.ajax-form-button-delete,
+.ajax-form-button-create,
+.ajax-form-button-registration,
+.ajax-form-button-confirmation,
+.ajax-form-button-send,
+.ajax-form-button-attach,
+.ajax-form-button-detach,*/
+.ajax-form-message-close,
+.ajax-form-message-icon-success,
+.ajax-form-message-icon-error,
+.ajax-form-message-icon-info,
+.ajax-form-message-icon-warning,
+.icon-attachment,
+.icon-button-save,
+.icon-button-cancel,
+.icon-button-add, .icon-button-create,
+.icon-button-delete
+{
+	background: url("urv-sprites.png") no-repeat;
+}
+
+.ajax-form-close {background-position: 0px -101px;}
+.ajax-form-close:hover{background-position: -24px -101px;}
+.ajax-form-close:active{background-position: -48px -101px;}
+
+/*.ajax-form-button-success {background-position: -93px -70px;}
+.ajax-form-button-success:hover {background-position: -93px -35px;}
+.ajax-form-button-success:active {background-position: -93px 0px;}
+
+.ajax-form-button-cancel {background-position: 0px -70px;}
+.ajax-form-button-cancel:hover {background-position: 0px -35px;}
+.ajax-form-button-cancel:active {background-position: -1px -1px;} /* Костыль для css-компрессора (он 0px 0px превращает просто в 0, что нарушает css-синтаксис) */
+
+/*.ajax-form-button-delete {background-position: -339px -70px;}
+.ajax-form-button-delete:hover {background-position: -339px -35px;}
+.ajax-form-button-delete:active {background-position: -339px 0px;}
+
+.ajax-form-button-create {background-position: -217px -70px;}
+.ajax-form-button-create:hover {background-position: -217px -35px;}
+.ajax-form-button-create:active {background-position: -217px 0px;}
+
+.ajax-form-button-registration {background-position: -440px -70px;}
+.ajax-form-button-registration:hover {background-position: -440px -35px;}
+.ajax-form-button-registration:active {background-position: -440px 0px;}
+
+.ajax-form-button-confirmation {background-position: -578px -70px;}
+.ajax-form-button-confirmation:hover {background-position: -578px -35px;}
+.ajax-form-button-confirmation:active {background-position: -578px 0px;}
+
+.ajax-form-button-send {background-position: -810px -70px;}
+.ajax-form-button-send:hover {background-position: -810px -35px;}
+.ajax-form-button-send:active {background-position: -810px 0px;}
+
+.ajax-form-button-attach {background-position: -936px -70px;}
+.ajax-form-button-attach:hover {background-position: -936px -35px;}
+.ajax-form-button-attach:active {background-position: -936px 0px;}
+
+.ajax-form-button-detach {background-position: -1068px -70px;}
+.ajax-form-button-detach:hover {background-position: -1068px -35px;}
+.ajax-form-button-detach:active {background-position: -1068px 0px;}*/
+
+.ajax-form-message-close {background-position: 0px -127px;}
+.ajax-form-message-close:hover {background-position: -13px -127px;}
+.ajax-form-message-close:active{background-position: -26px -127px;}
+
+.ajax-form-message-icon-success{background-position: 0px -140px;}
+.ajax-form-message-icon-error{background-position: -159px -140px;}
+.ajax-form-message-icon-info{background-position: -60px -140px;}
+.ajax-form-message-icon-warning{background-position: -90px -140px;}
+
+.icon-attachment{background-position: 0px -170px; width:24px; height:24px; display:inline-block;}
+
+/* Иконки кнопок
+---------------------------------------------------------------*/
+.icon-button-save    { background-position: -9px   -401px; width:35px; height:26px; display:inline-block; float:left; margin-left: -6px;}
+.icon-button-cancel{ background-position: -50px  -401px; width:35px; height:26px; display:inline-block; float:left; margin-left: -6px;}
+.icon-button-add,
+.icon-button-create{ background-position: -85px  -401px; width:35px; height:26px; display:inline-block; float:left; margin-left: -6px;}
+.icon-button-delete{ background-position: -122px -401px; width:35px; height:26px; display:inline-block; float:left; margin-left: -6px;}
+
+/* Кнопки
+---------------------------------------------------------------*/
+.ajax-form-button, .ajax-form-button-create, .ajax-form-button-add {
+	font-family: "MS Shell Dlg", Hevletica, Arial; font-size:16px; font-weight: normal; margin:0px; padding:0 6px 0 6px; height:35px; color:#303030; cursor:pointer;  line-height:25px;
+}
+.ajax-form-button-content {float:left;}
+
+.ajax-form-button-cancel, .ajax-form-button-delete {
+	font-family: "MS Shell Dlg", Hevletica, Arial; font-size:16px; font-weight: bold; margin:0px; padding:0 6px 0 6px; height:35px; color:#ffffff; cursor:pointer; line-height:25px;
+	box-shadow:inset 0px 1px 0px 0px #cf866c, 1px 1px 2px rgba(80, 0, 0, 0.25);
+	background:-ms-linear-gradient(top, #d0451b 5%, #bc3315 100%);
+	background:linear-gradient(to bottom, #d0451b 5%, #bc3315 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#d0451b', endColorstr='#bc3315',GradientType=0);
+	background-color:#d0451b;
+	border-radius:3px;
+	border:1px solid #942911;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #854629;
+	width: auto !important;
+}
+.ajax-form-button-cancel:hover, .ajax-form-button-delete:hover {
+	background:-ms-linear-gradient(top, #bc3315 5%, #d0451b 100%);
+	background:linear-gradient(to bottom, #bc3315 5%, #d0451b 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bc3315', endColorstr='#d0451b',GradientType=0);
+	background-color:#bc3315;
+}
+.ajax-form-button-cancel:active, .ajax-form-button-delete:active {
+	box-shadow: none;
+	position:relative;
+	top:1px;
+}
+.ajax-form-button-delete {
+	color: #250000;
+	text-shadow:0px 1px 0px #f06060;
+}
+
+.ajax-form-button-save, .ajax-form-button-success , .ajax-form-button-submit {
+	font-family: "MS Shell Dlg", Hevletica, Arial; font-size:16px; font-weight: bold; margin:0px; padding:0 6px 0 6px; height:35px; color:#ffffff; cursor:pointer; line-height:25px;
+	box-shadow:inset 0px 1px 0px 0px #caefab, 1px 1px 2px rgba(0, 80, 0, 0.25);
+	background:-ms-linear-gradient(top, #77d42a 5%, #5cb811 100%);
+	background:linear-gradient(to bottom, #77d42a 5%, #5cb811 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77d42a', endColorstr='#5cb811',GradientType=0);
+	background-color:#77d42a;
+	border-radius:3px;
+	border:1px solid #205108;
+	display:inline-block;
+	cursor:pointer;
+	color:#205108;
+	color:#103108;
+	font-weight: bold;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #aade7c;
+}
+.ajax-form-button-save:hover, .ajax-form-button-success:hover , .ajax-form-button-submit:hover {
+	background:-ms-linear-gradient(top, #5cb811 5%, #77d42a 100%);
+	background:linear-gradient(to bottom, #5cb811 5%, #77d42a 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5cb811', endColorstr='#77d42a',GradientType=0);
+	background-color:#5cb811;
+}
+.ajax-form-button-save:active, .ajax-form-button-success:active, .ajax-form-button-submit:active {
+	box-shadow: none;
+	position:relative;
+	top:1px;
+}
+
+
+/* Форма
+---------------------------------------------------------------*/
+.ajax-form{
+	border: 1px solid #92b5f0;
+	border-radius: 5px;
+	box-shadow: 5px 5px 15px 5px;
+	background: #e4e7fa;
+	z-index:105;
+	/*overflow:auto;*/
+}
+.ajax-form, .ajax-form table, .ajax-form input[type="text"]{font-family:Arial;font-size:13px;margin-bottom:0px;}
+.ajax-form table {width: 100%;}
+.ajax-form table td {vertical-align: top; padding: 2px 5px 2px 0;}
+
+/* Шапка формы, заголовок формы, кнопки для закрытия формы
+---------------------------------------------------------------*/
+.ajax-form-head{
+	width:100%;
+	cursor: move;
+	border-bottom: 1px solid #92b5f0;
+	padding: 2px 5px 0 5px;
+}
+.ajax-form-body {border-top: 1px solid #fafaff;}
+
+.ajax-form-close{
+	width:24px;
+	height:24px;
+	cursor: pointer;
+	padding:0;
+}
+
+.ajax-form-title{
+	text-align:center;
+	font-weight:bold;
+	color: #003A08;
+}
+
+/* Тело формы
+---------------------------------------------------------------*/
+.ajax-form-body{padding: 10px 10px 10px 10px;}
+
+
+/* Подвал формы, кнопки "Сохранить" и "Отмена"
+---------------------------------------------------------------*/
+.ajax-form-footer{padding: 10px 10px 10px 10px;}
+
+/*
+.ajax-form-button-success,
+.ajax-form-button-cancel,
+.ajax-form-button-create,
+.ajax-form-button-delete,
+.ajax-form-button-registration,
+.ajax-form-button-confirmation,
+.ajax-form-button-send,
+.ajax-form-button-attach,
+.ajax-form-button-detach {
+	width:120px;
+	height:30px;
+	border:none;
+	cursor:pointer;
+	padding:0;
+}
+.ajax-form-button-cancel {width:90px;}
+.ajax-form-button-delete {width:97px;}
+.ajax-form-button-registration {width:133px;}
+.ajax-form-button-confirmation {width:227px;}
+.ajax-form-button-send {width:121px;}
+.ajax-form-button-attach  {width:127px;}
+.ajax-form-button-detach  {width:127px;}*/
+
+
+/* Прочие элементы формы формы
+---------------------------------------------------------------*/
+
+.ajax-form .required{color:red;}
+.ajax-form .padding-left-10px {padding-left:10px;}
+.ajax-form td.padding-left-10px {padding-left:10px;}
+.ajax-form .width-100{width:100%;}
+.ajax-form .error {color:red !important; font-size:11px;}
+.ajax-form .label-error {color:#DD0000 !important;}
+.ajax-form .input-error {border:2px solid #DD0000 !important;}
+
+
+
+
+/* Сообщения формы
+---------------------------------------------------------------*/
+.ajax-form-message-success,
+.ajax-form-message-error,
+.ajax-form-message-info,
+.ajax-form-message-warning {
+	padding: 5px; border-radius: 15px; box-shadow: 0 0 5px 2px #CCCCCC; margin-top:20px;
+}
+
+.ajax-form-message-close{width:12px; height:12px; float:right; cursor:pointer;}
+.ajax-form-message-icon-success,
+.ajax-form-message-icon-error,
+.ajax-form-message-icon-info,
+.ajax-form-message-icon-warning {
+	width:30px; height:30px; float:left; margin-right:10px;
+}
+.ajax-form-message-icon-warning  {width:33px;}
+
+.ajax-form-message-success {border:1px solid #4f8a10; background:#dff2bf;color:#4f8a10; width:100%;}
+.ajax-form-message-error {border:1px solid #a8000c; background:#ffbaba;color:#a8000c; width:100%;}
+.ajax-form-message-info {border:1px solid #00529b; background:#bde5f8;color:#00529b; width:100%;}
+.ajax-form-message-warning {border:1px solid #9f6000; background:#feefb3;color:#9f6000; width:100%;}
+
+.ajax-form-message-text-body{padding-top:5px;}
+
+
+
+
+
+
+
+
+/* Форма для редактирования пользователей.
+Оформление текстовых полей и надписей для 
+формы добавления и редактирования пользователей
+---------------------------------------------------------------*/
+
+.urv-user-form label[for] {font-style:italic;font-weight:bold; padding:0 2px 0 0; color:#001744;}
+.urv-user-form .ajax-form-body  td {padding:0px 10px 5px 0;}
+.urv-user-form .ajax-form-body  td.last{padding-right:0px;}
+
+.urv-user-form input[type="text"],
+.urv-user-form input[type="password"],
+.urv-user-form textarea,
+.urv-user-form select {
+	border:1px solid #6996ca;
+}
+
+.urv-user-form input[type="text"], .ajax-form input[type="password"] {
+	font-style:italic;font-weight:bold;
+	padding-left:2px; padding-right:2px; 
+	width:97%;
+	color:#6F0000;
+}
+.urv-user-form input[type="password"] {color:#000;font-weight:normal; font-style:normal;}
+.urv-user-form .chzn-container input[type="text"] {
+	font-style:normal; font-weight:normal;
+	color:#000;
+	padding: 4px 20px 4px 5px;
+}
+
+
+
+.urv-table tr.user-blocked {color:#ccc;}
+.urv-table .subscribed{color:green;}
+.urv-table .unsubscribed{color:red;}
+.urv-table .check-ip{color:red;}
+/*table.urv-table tbody tr:hover{background: #efe;}*/
+.urv-table.dataTable tbody tr {cursor:pointer;}
+.ajax-form-head td {padding:0px;}
+.ajax-form-head .ajax-form-title {padding-top: 5px;}
+
+table.table td {vertical-align: top;}
+.ajax-form .tagit .tagit-edit-handle ul {line-height: 18px;}
+.chzn-container .chzn-results {max-height: 220px;}
+
+.resizable {cursor:se-resize;position:absolute;bottom:0px;right:0px;width:10px;height:10px;background:#aab;}

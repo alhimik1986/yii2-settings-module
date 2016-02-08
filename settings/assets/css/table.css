@@ -1,0 +1,369 @@
+/* Рамки таблицы
+----------------------------------------------------------------*/
+table.urv-table {
+	/*border-collapse: collapse;*/
+	border-spacing:0;
+	
+	/*border-top: 1px solid #4382e6;*/
+	border-left: 1px solid #4382e6;
+	border-bottom: none;
+	
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+table.urv-table > tbody > tr > td, table.urv-table > thead > tr > th {
+	border-bottom: 1px solid #4382e6;
+	border-right: 1px solid #4382e6;
+}
+table.urv-table > thead > tr > th {
+	border-top: 1px solid #4382e6;
+	border-right: 1px solid #4382e6;
+	border-left: 1px solid #ffffff;
+	border-bottom: 1px solid #4382e6;
+}
+table.urv-table > thead > tr > th:first-child {
+	border-top-left-radius: 5px;
+}
+table.urv-table > thead > tr > th:last-child {
+	border-top-right-radius: 5px;
+}
+table.table-row-hover tr.odd:hover, table.table-row-hover tr.even:hover {background-color:#dfe7fe; cursor:pointer;}
+
+/* Убираю стили сторонних плагинов
+----------------------------------------------------------------*/
+table.urv-table > tbody > tr:nth-child(2n+1) {
+	background-color: #eff7fe;
+}
+table.urv-table > tbody > tr:nth-child(2n) {
+	background-color: #ffffff;
+}
+table.urv-table > tbody > tr.odd {
+	background-color: #eff7fe;
+}
+table.urv-table > tbody > tr.even {
+	background-color: #ffffff;
+}
+table.urv-table > tbody > tr td.weekend{
+	background-color: #fbce95;
+}
+table.urv-table > tbody > tr.odd > td.sorting_1 {background-color: inherit;}
+table.urv-table > tbody > tr.even td.sorting_1 {background-color: inherit;}
+/*table.urv-table tr.odd td.sorting_1, table.urv-table tr.even td.sorting_1 {background-color: inherit !important;}*/
+
+.urv-table .filters {display:none;}
+
+/* Базовый стиль
+----------------------------------------------------------------*/
+table.urv-table > thead tr:first-child {
+	background-color: #bfdcff !important; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM4NGJjZTgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(132,188,232,1) 100%); /* FF3.6+ */
+/*	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(132,188,232,1)));*/ /* Chrome,Safari4+ */
+/*	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(132,188,232,1) 100%);*/ /* Chrome10+,Safari5.1+ */
+/*	background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(132,188,232,1) 100%);*/ /* Opera 11.10+ */
+/*	background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(0,140,220,1) 100%);*/ /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(132,188,232,1) 100%); /* W3C */
+/*	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#84bce8',GradientType=0 );*/ /* IE6-8 */
+}
+table.urv-table{color:#000379; /*background-color: #bfdcff;*/}
+table.urv-table > thead > tr > th {padding:5px; font-weight: bold;}
+
+/* Сортировка в таблице
+----------------------------------------------------------------*/
+.urv-table th[column_name] {
+    background: url("../images/sort_both.png") no-repeat scroll right center;
+	background-color:  rgba(0, 0, 0, 0);
+	cursor: pointer;
+}
+.urv-table th.sorting_asc {
+    background: url("../images/sort_asc.png") no-repeat scroll right center;
+	background-color:  rgba(0, 0, 0, 0);
+}
+.urv-table th.sorting_desc {
+    background: url("../images/sort_desc.png") no-repeat scroll right center;
+	background-color:  rgba(0, 0, 0, 0);
+}
+
+
+/* Плагин dataTables
+----------------------------------------------------------------*/
+.dataTables_wrapper .top:after, .dataTables_wrapper .bottom:after {
+	display: table;
+	clear: both;
+	content: '';
+}
+.dataTables_wrapper .top, .dataTables_wrapper .bottom {
+	padding: 8px;
+	border: 1px solid #aaaaaa;
+	border-bottom: none;
+	border-radius: 4px;
+	color: #333;
+	
+	background: rgb(228,228,228); /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U0ZTRlNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNjZGNkY2QiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  rgba(228,228,228,1) 0%, rgba(205,205,205,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(228,228,228,1)), color-stop(100%,rgba(205,205,205,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(228,228,228,1) 0%,rgba(205,205,205,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(228,228,228,1) 0%,rgba(205,205,205,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(228,228,228,1) 0%,rgba(205,205,205,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(228,228,228,1) 0%,rgba(205,205,205,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4e4e4', endColorstr='#cdcdcd',GradientType=0 ); /* IE6-8 */
+}
+
+.dataTables_wrapper .ColVis {
+	width: 100%;
+	float: none;
+	margin-bottom: 10px;
+}
+.dataTables_wrapper .ColVis:after {
+	display: table;
+	clear: both;
+	content: '';
+}
+.dataTables_wrapper .ColVis_Button {
+	float: right;
+}
+
+.dataTables_wrapper .dataTables_info {
+	clear: none;
+	padding-top: 2px;
+	margin-left: 20px;
+	float:right;
+}
+.dataTables_wrapper .dataTables_length {
+	margin-left: 15px;
+}
+
+.dataTables_wrapper .dataTables_filter {
+	float: left;
+}
+
+.dataTables_wrapper .bottom .dataTables_info {
+	float: left;
+	margin-left: 5px;
+}
+/* Пейджер плагина dataTables
+----------------------------------------------------------------*/
+.dataTables_wrapper .paging_full_numbers.dataTables_paginate {
+	height: auto;
+	line-height: normal;
+}
+
+/* Рамки пейджера */
+.dataTables_wrapper .paging_full_numbers a.paginate_button,
+.dataTables_wrapper .paging_full_numbers a.paginate_active {
+	border-right: none;
+}
+.dataTables_wrapper .paging_full_numbers a.last{
+	border-right: 1px solid #bbb;
+}
+.dataTables_wrapper .paging_full_numbers.dataTables_paginate a.first {
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+.dataTables_wrapper .paging_full_numbers.dataTables_paginate a.last {
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+/* Неактивные и активные кнопки пейждера */
+.dataTables_wrapper .paging_full_numbers.dataTables_paginate a {
+	background: #f2f2f2;	
+}
+.dataTables_wrapper .paging_full_numbers a.paginate_active,
+.dataTables_wrapper .paging_full_numbers a.paginate_button_disabled {
+	background: none;
+	cursor: default;
+}
+.dataTables_wrapper .paging_full_numbers a.paginate_active:hover,
+.dataTables_wrapper .paging_full_numbers a.paginate_button_disabled:hover {
+	background: none;
+}
+
+/* Не выделять текст в кнопках пейджера */
+.dataTables_paginate {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+/* Основной стиль */
+.dataTables_wrapper .paging_full_numbers.dataTables_paginate a {
+	padding: 7px;
+	border-radius: 0;
+	margin: 0;
+	display: inline-block;
+}
+
+.dataTables_filter, .dataTables_length {
+	padding-top: 5px;
+}
+.dataTables_wrapper .dataTables_info {
+	padding-top: 7px;
+}
+
+
+
+
+
+/* Таблица предупреждений
+----------------------------------------------------------------*/
+table.caution-table {
+	/*border-collapse: collapse;*/
+	border-spacing:0;
+	
+	/*border-top: 1px solid #800000;*/
+	border-left: 1px solid #800000;
+	border-bottom: none;
+	
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+table.caution-table > tbody > tr > td, table.caution-table > thead > tr > th {
+	border-bottom: 1px solid #800000;
+	border-right: 1px solid #800000;
+}
+table.caution-table > thead > tr > th {
+	border-top: 1px solid #800000;
+	border-right: 1px solid #800000;
+	border-left: 1px solid #ffffff;
+	border-bottom: 1px solid #800000;
+}
+table.caution-table > thead > tr > th:first-child {
+	border-top-left-radius: 5px;
+}
+table.caution-table > thead > tr > th:last-child {
+	border-top-right-radius: 5px;
+}
+/* Зебра
+----------------------------------------------------------------*/
+table.caution-table > tbody > tr:nth-child(2n+1) { background-color: #fbb3b3; }
+table.caution-table > tbody > tr:nth-child(2n) {	background-color: #ffd6d6; }
+table.caution-table > tbody > tr.odd { background-color: #fbb3b3; }
+table.caution-table > tbody > tr.even { background-color: #ffd6d6; }
+table.caution-table > tbody > tr.odd > td.sorting_1 {background-color: inherit;}
+table.caution-table > tbody > tr.even td.sorting_1 {background-color: inherit;}
+/* Базовый стиль
+----------------------------------------------------------------*/
+table.caution-table > thead{
+	background-color: #fe7878 !important; /* Old browsers */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZkZDdkNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZjQyNDIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -ms-linear-gradient(top, #fdd7d7 0%,#ff4242 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #fdd7d7 0%,#ff4242 100%); /* W3C */
+}
+table.caution-table{color:#460000; background-color: #bfdcff;}
+table.caution-table > thead > tr > th {padding:5px; font-weight: bold; color: #330000; font-style: italic; }
+table.caution-table > tbody > tr > td {padding:3px;}
+/* Сообщение предупреждения
+----------------------------------------------------------------*/
+.caution-message {border: 1px solid #460000; background-color: #ff7878; color: #660000; font-size:16px; font-weight:bold; border-radius: 3px;}
+
+
+/* Таблица "Внимание"
+----------------------------------------------------------------*/
+table.warning-table {
+	/*border-collapse: collapse;*/
+	border-spacing:0;
+	
+	/*border-top: 1px solid #a86f30;*/
+	border-left: 1px solid #a86f30;
+	border-bottom: none;
+	
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+table.warning-table > tbody > tr > td, table.warning-table > thead > tr > th {
+	border-bottom: 1px solid #a86f30;
+	border-right: 1px solid #a86f30;
+}
+table.warning-table > thead > tr > th {
+	border-top: 1px solid #a86f30;
+	border-right: 1px solid #a86f30;
+	border-left: 1px solid #ffffff;
+	border-bottom: 1px solid #a86f30;
+}
+table.warning-table > thead > tr > th:first-child {
+	border-top-left-radius: 5px;
+}
+table.warning-table > thead > tr > th:last-child {
+	border-top-right-radius: 5px;
+}
+/* Зебра
+----------------------------------------------------------------*/
+table.warning-table > tbody > tr:nth-child(2n+1) { background-color: #f3e8d3; }
+table.warning-table > tbody > tr:nth-child(2n) {	background-color: #ead7b5; }
+table.warning-table > tbody > tr.odd { background-color: #f3e8d3; }
+table.warning-table > tbody > tr.even { background-color: #ead7b5; }
+table.warning-table > tbody > tr.odd > td.sorting_1 {background-color: inherit;}
+table.warning-table > tbody > tr.even td.sorting_1 {background-color: inherit;}
+/* Базовый стиль
+----------------------------------------------------------------*/
+table.warning-table > thead{
+	background-color: #dec192 !important; /* Old browsers */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZhZjVlYiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkMWFiNzMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -ms-linear-gradient(top, #faf5eb 0%,#d1ab73 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #faf5eb 0%,#d1ab73 100%); /* W3C */
+}
+table.warning-table{color:#000000; background-color: #bfdcff;}
+table.warning-table > thead > tr > th {padding:5px; font-weight: bold; color: #000000; font-style: italic; }
+table.warning-table > tbody > tr > td {padding:3px;}
+/* Сообщение предупреждения
+----------------------------------------------------------------*/
+.warning-message {border: 1px solid #2f2700; background-color: #ffd400; color: #660000; font-size:16px; font-weight:bold; border-radius: 3px;}
+
+
+/* Таблица объяснительных (примечаний)
+----------------------------------------------------------------*/
+table.note-table {
+	/*border-collapse: collapse;*/
+	border-spacing:0;
+	
+	/*border-top: 1px solid #6f6f6f;*/
+	border-left: 1px solid #6f6f6f;
+	border-bottom: none;
+	
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+table.note-table > tbody > tr > td, table.note-table > thead > tr > th {
+	border-bottom: 1px solid #6f6f6f;
+	border-right: 1px solid #6f6f6f;
+}
+table.note-table > thead > tr > th {
+	border-top: 1px solid #6f6f6f;
+	border-right: 1px solid #6f6f6f;
+	border-left: 1px solid #ffffff;
+	border-bottom: 1px solid #6f6f6f;
+}
+table.note-table > thead > tr > th:first-child {
+	border-top-left-radius: 5px;
+}
+table.note-table > thead > tr > th:last-child {
+	border-top-right-radius: 5px;
+}
+/* Зебра
+----------------------------------------------------------------*/
+table.note-table > tbody > tr:nth-child(2n+1) { background-color: #e8e8e8; }
+table.note-table > tbody > tr:nth-child(2n) {	background-color: #d7d7d7; }
+table.note-table > tbody > tr.odd { background-color: #e8e8e8; }
+table.note-table > tbody > tr.even { background-color: #d7d7d7; }
+table.note-table > tbody > tr.odd > td.sorting_1 {background-color: inherit;}
+table.note-table > tbody > tr.even td.sorting_1 {background-color: inherit;}
+/* Базовый стиль
+----------------------------------------------------------------*/
+table.note-table > thead > tr:first-child, table.note-table th {
+	background-color: #c0c0c0 !important; /* Old browsers */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y2ZjZmNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNhYmFiYWIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -ms-linear-gradient(top,  #f6f6f6 0%,#ababab 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #f6f6f6 0%,#ababab 100%); /* W3C */
+}
+table.note-table{color:#000000; background-color: #bfdcff;}
+table.note-table > thead > tr > th {padding:5px; font-weight: bold; color: #000000; font-style: italic;}
+table.note-table > tbody > tr > td {padding:3px;}
+
+table.note-table {border-left: 1px solid #6f6f6f;};
