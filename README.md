@@ -39,6 +39,7 @@ $config['modules']['settings']['class']    = 'app\modules\settings\Module';     
 
 <h2>Адрес для входа в настройки:</h2>
 http://localhost/index.php?r=settings
+<br>
 Пароль: 123
 
 Все эти настройки, находится в файле settings/settings.json
@@ -47,10 +48,11 @@ http://localhost/index.php?r=settings
 <h2>Пример доступа к настройкам:</h2>
 ```
 $db = Yii::$app->settings->param['db'];
-
+```
 В переменной $db ключи value, label, description исключены.
 Берется только name (ключ настройки) и значение value (значенние настройки).
 Т.е., если в settiings.json было:
+```
 {
 	"db": {
 		"value": {
