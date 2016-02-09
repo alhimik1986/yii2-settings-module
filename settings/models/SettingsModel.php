@@ -33,8 +33,8 @@ class SettingsModel extends \yii\base\Model
 		return array(
 			array(['name'], 'filter', 'filter'=>'trim'), // Убираю пробелы в начале и в конце во всех полях, кроме массивов.
 			array(['name'], 'required'),                 // Эти поля не должны быть пустыми (обязательные поля).
-			array(['name', 'label'], 'string', 'max'=>255), // Не должны быть больше 255 символов.
-			array(['description'], 'string', 'max'=>40000), // Не должны быть больше 40000 символов.
+			array(['name',], 'string', 'max'=>255), // Не должны быть больше 255 символов.
+			array(['label', 'description'], 'string', 'max'=>40000), // Не должны быть больше 40000 символов.
 			array(['value'], 'safe'),  // Помечаю аттрибут безопасным, чтобы можно было присваивать массив с последующим его кодированием в json
 		);
 	}
@@ -103,18 +103,20 @@ class SettingsModel extends \yii\base\Model
 	 * Получает модель по заданным параметрам поиска.
 	 * 
 	 * @param string $name имя перемаметра настройки:
+	 * @param boolean $throwException Бросать исключение, если запись не найдена.
 	 * @return mixed $model
 	 * @throws yii\web\HttpException 404 "Параметр настройки не найден!"
 	 */
-	public static function getModel($name)
+	public static function getModel($name, $throwException=true)
 	{
 		// Читаю файл настроек: settings.json
 		$settings = self::getJsonSettings();
-		
 		$model = __CLASS__;
         $model = new $model();
-		if ( ! isset($settings[$name]) ) {
-			throw new yii\web\HttpException('404', 'Параметр настройки не найден!');
+		if ( ! isset($settings[$name])) {
+			if ($throwException)
+				throw new \yii\web\HttpException('404', 'Параметр настройки не найден!');
+			return null;
 		}
 		$settings = $settings[$name];
 		$settings['name'] = $name;
@@ -140,6 +142,33 @@ class SettingsModel extends \yii\base\Model
 	{
 		$settings = self::getJsonSettings();
 		return isset($settings[$name]) ? $settings[$name]['value'] : null;
+	}
+
+
+	/**
+	 * @param string $name Имя параметра настройки, который необходимо изменить.
+	 * @param mixed $value Значение настройки, которое нужно выставить.
+	 * @return boolean Результат сохранения.
+	 */
+	public static function setSetting($name, $value)
+	{
+		$className = self::className();
+		$model = SettingsModel::getModel($name, $throwException=false);
+		if ($model) {
+			$data = [$className => ['value' => $value]];
+			return $model->setAttrAndSave($data);
+		} else {
+			$class = __CLASS__;
+			$model = new $class();
+			$data = [$className => [
+				'name' => $name,
+				'value' => $value],
+				'label' => '',
+				'description' => '',
+			];
+			$model->name = $name;
+			return $model->setAttrAndSave($data);
+		}
 	}
 
 

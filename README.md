@@ -45,16 +45,18 @@ http://localhost/index.php?r=settings
 
 <h2>Пример доступа к настройкам:</h2>
 ```
-$db = Yii::$app->settings->param['db'];
+$db = Yii::$app->settings->param['db']; // Здесь хранятся кэшированные данные
+$db = Yii::$app->settings->get('db');   // То же самое, тольк данные не кэшируются, но быстродействие от этого практически не пострадает
+Yii::$app->settings->set('password', '1234243'); // Меняем значение настройки "password"
 ```
-В переменной $db ключи value, label, description исключены.
+В переменной $db ключи value, label, description исключены, так как они не нужны.
 Берется только name (ключ настройки) и значение value (значенние настройки).
 Т.е., если в settiings.json было:
 ```
 {
 	"db": {
 		"value": {
-			"connectionString": "sqlite:..\/..\/application\/data\/database.s3db",
+			"connectionString": "sqlite:..\/..\/..\/application\/basic\/data\/database.s3db",
 			"username": "",
 			"password": "",
 			"tablePrefix": "",
@@ -68,7 +70,7 @@ $db = Yii::$app->settings->param['db'];
 То $db будет равен:
 ```
 [
-	'connectionString' => 'sqlite:..\/..\/application\/data\/database.s3db',
+	'connectionString' => 'sqlite:../../../application/data/database.s3db',
 	'username'         => '',
 	'password'         => '',
 	'tablePrefix'      => '',
@@ -76,22 +78,8 @@ $db = Yii::$app->settings->param['db'];
 ]
 ```
 
-<h2>Как можно менять настройки:</h2>
+<h2>Пример использования этого модуля в файле web.php для установки параметров подключения к базе данных:</h2>
 ```
-use app\modules\settings\models\SettingsModel;
-
-$setting_name = 'db';
-$data = [
-	'SettingsModel' => [
-		'value' => [
-			'connectionString' => 'sqlite:..\/..\/application\/data\/database.s3db',
-			'username'         => '',
-			'password'         => '',
-			'tablePrefix'      => '',
-			'class'            => 'yii\db\Connection',
-		],
-	],
-];
-$model = SettingsModel::getModel($setting_name);
-$model->setAttrAndSave($data);
+require_once(realpath(__DIR__.'/../modules/settings/models/SettingsModel.php'));
+$config['components']['db'] = app\modules\settings\models\SettingsModel::getSetting('db');
 ```

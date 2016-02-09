@@ -26,4 +26,14 @@ class Settings extends \yii\base\Component
 		
 		$this->param = $settings;
 	}
+
+	public function get($name)
+	{
+		return SettingsModel::getSetting($name);
+	}
+
+	public function set($name, $value)
+	{
+		return SettingsModel::setSetting($name, $value);
+	}
 }
