@@ -7,7 +7,7 @@
         "module"
     ],
     "homepage": "https://github.com/alhimik1986/",
-    "type": "library",
+    "type": "module",
     "license": "MIT",
     "authors": [
         {
