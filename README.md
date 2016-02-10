@@ -13,14 +13,14 @@
 $config = [
     'components' => [
 		...........
-		'settings' => ['class' => 'app\modules\settings\components\Settings'], // Для доступа к настройкам
+		'settings' => ['class' => 'alhimik1986\yii2_settings_module\components\Settings'], // Для доступа к настройкам
     ],
 	
 	// Для доступа на странцу редактирования настроек
 	'modules' => [
 		...........
 		'settings' => [
-			'class' => 'app\modules\settings\Module',
+			'class' => 'alhimik1986\yii2_settings_module\Module',
 			// Необязательные параметры
 			'password' => '123', // Пароль для в входа на страницу редактирования настроек. По умолчанию 123, если указать пустой, то вход без авторизации
 			'password_in_settings' => false, // Если указать true, то брать и проверять пароль в настройках (settings.json), а не в web.config-файле.
@@ -31,8 +31,8 @@ $config = [
 ```
 // Или так:
 ```
-$config['components']['settings']['class'] = 'app\modules\settings\components\Settings'; // Для доступа к настройкам
-$config['modules']['settings']['class']    = 'app\modules\settings\Module';              // Для доступа на странцу редактирования настроек
+$config['components']['settings']['class'] = 'alhimik1986\yii2_settings_module\components\Settings'; // Для доступа к настройкам
+$config['modules']['settings']['class']    = 'alhimik1986\yii2_settings_module\Module';              // Для доступа на странцу редактирования настроек
 ```
 
 <h2>Адрес для входа в настройки:</h2>
@@ -80,6 +80,6 @@ Yii::$app->settings->set('password', '1234243'); // Меняем значени�
 
 <h2>Пример использования этого модуля в файле web.php для установки параметров подключения к базе данных:</h2>
 ```
-require_once(realpath(__DIR__.'/../modules/settings/models/SettingsModel.php'));
-$config['components']['db'] = app\modules\settings\models\SettingsModel::getSetting('db');
+require_once(realpath(__DIR__.'/../vendor/alhimik1986/yii2_settings_module/models/SettingsModel.php'));
+$config['components']['db'] = alhimik1986\yii2_settings_module\models\SettingsModel::getSetting('db');
 ```
