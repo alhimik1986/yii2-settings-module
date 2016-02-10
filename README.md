@@ -7,7 +7,11 @@
 
 <h2>УСТАНОВКА:</h2>
 
-Создать папку modules в папке приложения и поместить туда папку "settings".
+Скачивается с помощью composer. В папке приложения в файле composer.json дописать строчку:
+    "require": {
+		.................
+		'alhimik1986/yii2-settings-module": "*"
+    },
 В файле config/web.php прописать настройки:
 ```
 $config = [
@@ -83,3 +87,6 @@ Yii::$app->settings->set('password', '1234243'); // Меняем значени�
 require_once(realpath(__DIR__.'/../vendor/alhimik1986/yii2_settings_module/models/SettingsModel.php'));
 $config['components']['db'] = alhimik1986\yii2_settings_module\models\SettingsModel::getSetting('db');
 ```
+
+<h2>Подписи параметров настроек</h2>
+Подписи параметров настроек находятся в файле messages/[language]/settings_messages.php
