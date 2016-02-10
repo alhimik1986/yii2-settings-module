@@ -23,5 +23,10 @@
         "psr-4": {
             "alhimik1986\\yii2_settings_module\\": ""
         }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
     }
 }
