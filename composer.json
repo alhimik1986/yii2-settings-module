@@ -3,8 +3,8 @@
     "description": "Module, allowing get and set your settings, and having access throw the web page.",
     "keywords": [
         "yii2",
-        "framework",
-		"settings"
+		"settings",
+        "module"
     ],
     "homepage": "https://github.com/alhimik1986/",
     "type": "library",
@@ -23,8 +23,5 @@
         "psr-4": {
             "alhimik1986\\yii2_settings_module\\": ""
         }
-    },
-    "bin": [
-        "yii"
-    ]
+    }
 }
