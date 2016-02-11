@@ -26,7 +26,7 @@
 	"pager": {
 		"value": {
 			"default": {
-				"resultsPerPageMax": "100",
+				"resultsPerPageMax": "50",
 				"resultsPerPageDefault": "6",
 				"maxPages": "5"
 			}
