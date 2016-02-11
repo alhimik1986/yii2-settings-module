@@ -8,10 +8,12 @@
 <h2>УСТАНОВКА:</h2>
 
 Скачивается с помощью composer. В папке приложения в файле composer.json дописать строчку:
+```
     "require": {
 		.................
 		"alhimik1986/yii2_settings_module": "1.0.x-dev"
     },
+```
 В файле config/web.php прописать настройки:
 ```
 $config = [
