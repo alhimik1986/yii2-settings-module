@@ -35,6 +35,13 @@ class Settings extends \yii\base\Component
 
 	public function set($name, $value)
 	{
-		return SettingsModel::setSetting($name, $value);
+		$result = SettingsModel::setSetting($name, $value);
+		$this->param = self::getAll();
+		return $result;
+	}
+
+	public function getAll()
+	{
+		return SettingsModel::getSettings();
 	}
 }
