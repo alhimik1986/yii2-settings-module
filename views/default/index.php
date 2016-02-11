@@ -15,8 +15,8 @@ $this->registerCss('#urv-form label {margin-top:5px; display:block;}');
 	<thead>
 		<tr>
 			<th style="min-width:110px"><?php echo $model->getAttributeLabel('name');        ?></th>
-			<th style="min-width:120px"><?php echo $model->getAttributeLabel('label');       ?></th>
-			<th style="min-width:430px"><?php echo $model->getAttributeLabel('description'); ?></th>
+			<th style="min-width:200px"><?php echo $model->getAttributeLabel('label');       ?></th>
+			<th style="min-width:350px"><?php echo $model->getAttributeLabel('description'); ?></th>
 			<th><?php                         echo $model->getAttributeLabel('value');       ?></th>
 		</tr>
 	</thead>
