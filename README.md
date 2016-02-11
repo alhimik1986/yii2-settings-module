@@ -31,6 +31,7 @@ $config = [
 			'password' => '123', // Пароль для в входа на страницу редактирования настроек. По умолчанию 123, если указать пустой, то вход без авторизации
 			'password_in_settings' => false, // Если указать true, то брать и проверять пароль в настройках (settings.json), а не в web.config-файле.
 			'allowedIPs' => ['127.0.0.1', '::1'], // Доступ по IP-адресам
+			//'l18n_base_path' => realpath(__DIR__ .'/../messages/alhimik1986/yii2_settings_module'); // Папка, в которой содержатся переводы на другие языки
 		],
 	],
 ];
@@ -91,4 +92,8 @@ $config['components']['db'] = alhimik1986\yii2_settings_module\models\SettingsMo
 ```
 
 <h2>Подписи параметров настроек</h2>
-Подписи параметров настроек находятся в файле messages/[language]/settings_messages.php
+Подписи параметров настроек находятся в папке модуля модуля в файле messages/[language]/settings_messages.php
+Править переводы в папке vendor не совсем правильно. Поэтому лучше в настройках прописать путь к папке переводов, например, в [папка_приложения]/messages/alhimik1986/yii2_settings_module. B скопировать туда содержимое папки messages нашего модуля.
+```
+$config['modules']['settings']['l18n_base_path'] = realpath(__DIR__ .'/../messages/alhimik1986/yii2_settings_module');
+```

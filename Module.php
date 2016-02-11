@@ -14,6 +14,7 @@ class Module extends \yii\base\Module
 	public $userModule; // Компонент пользователя (для этого модуля)
 	public $password = '123'; // Пароль по умолчанию
 	public $password_in_settings = false; // Брать и проверять пароль в настройка (settings.json), а не в web.config-файле
+	public $l18n_base_path = null;
 
     public function init()
     {
@@ -37,7 +38,7 @@ class Module extends \yii\base\Module
         Yii::$app->i18n->translations[self::namespace_str().'/*'] = [
             'class' => 'yii\i18n\PhpMessageSource',
             'sourceLanguage' => 'en-US',
-            'basePath' => __DIR__ .'/messages',
+            'basePath' => $this->l18n_base_path ? $this->l18n_base_path : __DIR__ .'/messages',
             'fileMap' => [
                 self::namespace_str().'/app' => 'messages.php',
                 self::namespace_str().'/settings' => 'settings_messages.php',
