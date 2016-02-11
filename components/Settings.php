@@ -21,6 +21,11 @@ class Settings extends \yii\base\Component
 
 	public function __construct()
 	{
+		$this->updateSettings();
+	}
+
+	protected function updateSettings()
+	{
 		$settings = SettingsModel::getSettings();
 		foreach($settings as $key=>$value)
 			$settings[$key] = $value['value'];
@@ -36,7 +41,7 @@ class Settings extends \yii\base\Component
 	public function set($name, $value)
 	{
 		$result = SettingsModel::setSetting($name, $value);
-		$this->param = self::getAll();
+		$this->updateSettings();
 		return $result;
 	}
 
