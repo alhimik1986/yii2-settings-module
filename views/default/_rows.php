@@ -1,4 +1,4 @@
-<?php foreach($data as $name=>$value): ?>
+<?php if (is_array($data)) foreach($data as $name=>$value): ?>
 <tr data_id="<?php echo $name; ?>">
 	<td><?php echo $name;                          ?></td>
 	<td><?php echo $value['label'];                ?></td>
