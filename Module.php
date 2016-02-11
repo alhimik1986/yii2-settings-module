@@ -15,6 +15,7 @@ class Module extends \yii\base\Module
 	public $password = '123'; // Пароль по умолчанию
 	public $password_in_settings = false; // Брать и проверять пароль в настройка (settings.json), а не в web.config-файле
 	public $l18n_base_path = null;
+	public $settings_json_file = null;
 
     public function init()
     {
@@ -27,6 +28,9 @@ class Module extends \yii\base\Module
 			'class' => 'yii\web\User',
 			'loginUrl' => [$this->id.'/site/login'],
 		]);
+		
+		if ($this->settings_json_file)
+			SettingsModel::set_custom_settings_json_file_path($this->settings_json_file);
     }
 	protected static function namespace_str()
 	{

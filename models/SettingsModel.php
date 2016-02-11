@@ -20,11 +20,19 @@ class SettingsModel extends \yii\base\Model
 	public $value;         // Значение параметра настройки
 	public $label;         // Название параметра настройки
 	public $description;   // Описание параметра настройки
+	
+	protected static $custom_settings_json_file_path = null; // Нестандартный путь к файлу settings.json
+	public static function set_custom_settings_json_file_path($path) { self::$custom_settings_json_file_path = $path; }
 
 	/**
 	 * @return string Путь к файлу настроек.
 	 */
-	public static function getFilePath() { return realpath(__DIR__.'/../settings/settings.json'); }
+	public static function getFilePath() {
+		if (self::$custom_settings_json_file_path)
+			return self::$custom_settings_json_file_path;
+		
+		return realpath(__DIR__.'/../settings/settings.json');
+	}
 
 
 	/**
