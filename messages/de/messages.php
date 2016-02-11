@@ -28,6 +28,7 @@ return [
 	'Setting value' => '',
 	'Label' => '',
 	'Description' => '',
+	'Empty...' => '',
 	
 	'All' => '',
 	'Press "Esc" to clean the search field' => '',

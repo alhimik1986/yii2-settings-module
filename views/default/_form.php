@@ -64,7 +64,7 @@ function textFields($className, $name, $value, $yii_t_label) {
 			<div>
 				<?php echo $form->field($model, 'label')->textArea(array(
 					'style'=>'width:99%;height:40px;',
-					'placeholder'=>'Пусто...',
+					'placeholder'=>Module::t('app', 'Empty...'),
 				)); ?>
 				<?php echo Html::error($model, 'label'); ?>
 			</div>
@@ -74,7 +74,7 @@ function textFields($className, $name, $value, $yii_t_label) {
 			<div>
 				<?php echo $form->field($model, 'description')->textArea(array(
 					'style'=>'width:99%;',
-					'placeholder'=>'Пусто...',
+					'placeholder'=>Module::t('app', 'Empty...'),
 				)); ?>
 				<?php echo Html::error($model, 'description'); ?>
 			</div>

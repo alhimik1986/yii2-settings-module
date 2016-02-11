@@ -28,6 +28,7 @@ return [
 	'Setting value' => 'Значение',
 	'Label' => 'Подпись',
 	'Description' => 'Описание',
+	'Empty...' => 'Пусто...',
 	
 	'All' => 'Все',
 	'Press "Esc" to clean the search field' => 'Нажмите "Esc" для очистки поиска',
