@@ -27,7 +27,7 @@ class Settings extends \yii\base\Component
 	protected function getAllSettings()
 	{
 		$settings = SettingsModel::getSettings();
-		foreach($settings as $key=>$value)
+		if (is_array($settings)) foreach($settings as $key=>$value)
 			$settings[$key] = $value['value'];
 		
 		return $settings;
