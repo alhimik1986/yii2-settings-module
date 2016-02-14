@@ -24,11 +24,12 @@ class DefaultController extends JsonController
 		return [
 			'access' => [
 				'class' => AccessControl::className(),
+				'user' => Yii::$app->controller->module->userModule->get('user'),
 				'rules' => [
 					[
 						'actions' => [],
 						'allow' => true,
-						'roles' => ['?', '@'],
+						'roles' => ['@'],
 					],
 				],
 			]

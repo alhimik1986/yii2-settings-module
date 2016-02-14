@@ -32,7 +32,7 @@ $user = Yii::$app->controller->module->userModule->get('user');
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
-            ['label' => Module::t('app', 'Home'), 'url' => [Yii::$app->homeUrl]],
+            ['label' => Module::t('app', 'Home'), 'url' => Yii::$app->homeUrl],
             ['label' => Module::t('app', 'Settings'), 'url' => ['/settings']],
            $user->isGuest ?
                 ['label' => Module::t('app', 'Login'), 'url' => ['site/login']] :
