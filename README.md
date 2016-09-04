@@ -101,5 +101,28 @@ $config['modules']['settings']['l18n_base_path'] = realpath(__DIR__ .'/../messag
 ```
 То же самое касается и файла settings.json. Его расположение также можно задать в настройках:
 ```
+$settings_path = realpath(__DIR__ .'/../config').'/settings.json';
+require_once(realpath(__DIR__.'/../vendor/alhimik1986/yii2_settings_module/models/SettingsModel.php'));
+alhimik1986\yii2_settings_module\models\SettingsModel::set_custom_settings_json_file_path($settings_path);
+$config['components']['db'] = alhimik1986\yii2_settings_module\models\SettingsModel::getSetting('db');
+```
+
+<h2>Суммарно типичные настройки выглядят вот так:</h2>
+```
+// Модуль настроек
+$config['modules']['settings']['class'] = 'alhimik1986\yii2_settings_module\Module';
+//$config['modules']['settings']['password'] = '123'; // Пароль для в входа на страницу редактирования настроек. По умолчанию 123, если указать пустой, то вход без авторизации
+$config['modules']['settings']['password_in_settings'] = true; // Если указать true, то брать и проверять пароль в настройках (settings.json), а не в web.config-файле.
+$config['modules']['settings']['allowedIPs'] = ['127.0.0.1', '::1']; // Доступ по IP-адресам
+//$config['modules']['settings']['l18n_base_path' = realpath(__DIR__ .'/../messages/alhimik1986/yii2_settings_module'); // Папка, в которой содержатся переводы на другие языки
 $config['modules']['settings']['settings_json_file'] = realpath(__DIR__ .'/../config').'/settings.json';
+
+// Для доступа к настройкам
+$config['components']['settings']['class'] = 'alhimik1986\yii2_settings_module\components\Settings';
+
+// Подключение к базе данных через настройки
+$settings_path = realpath(__DIR__ .'/../config').'/settings.json';
+require_once(realpath(__DIR__.'/../vendor/alhimik1986/yii2_settings_module/models/SettingsModel.php'));
+alhimik1986\yii2_settings_module\models\SettingsModel::set_custom_settings_json_file_path($settings_path);
+$config['components']['db'] = alhimik1986\yii2_settings_module\models\SettingsModel::getSetting('db');
 ```
