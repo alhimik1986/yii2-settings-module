@@ -9,7 +9,7 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use alhimik1986\yii2_settings_module\Module;
 
-alhimik1986\yii2_settings_module\AppAsset::register($this);
+alhimik1986\yii2_settings_module\App2Asset::register($this);
 
 $user = Yii::$app->controller->module->userModule->get('user');
 ?>
