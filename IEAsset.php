@@ -13,5 +13,8 @@ class IEAsset extends AssetBundle
 		'position' => \yii\web\View::POS_HEAD,
 		'condition' => 'lte IE8'
 	];
+    public $depends = [
+		'alhimik1986\yii2_settings_module\SettingsAsset',
+	];
 }
 

@@ -6,7 +6,7 @@
 	},
 	"db": {
 		"value": {
-			"dsn": "sqlite:..\/..\/..\/application\/basic\/data\/database.s3db",
+			"dsn": "sqlite:@app\/data\/database.s3db",
 			"username": "",
 			"password": "",
 			"tablePrefix": "",
