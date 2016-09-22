@@ -12,8 +12,7 @@
 Скачивается с помощью composer. В папке приложения в файле composer.json дописать строчку:
 ```
     "require": {
-		.................
-		"alhimik1986/yii2_settings_module": "1.0.x-dev"
+		"alhimik1986/yii2_settings_module": "1.0"
     },
 ```
 или в командой строке ввести:

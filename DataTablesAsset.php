@@ -19,5 +19,6 @@ class DataTablesAsset extends AssetBundle
     ];
     public $depends = [
 		'alhimik1986\yii2_settings_module\SettingsAsset',
+		'yii\web\JqueryAsset',
 	];
 }

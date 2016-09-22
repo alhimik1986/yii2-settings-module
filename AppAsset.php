@@ -31,10 +31,11 @@ class AppAsset extends AssetBundle
 			'css' => [],
 			'js' => [],
 		];
+		/*
 		\Yii::$app->assetManager->bundles['yii\\web\\JqueryAsset'] = [
 			'css' => [],
 			'js' => [],
-		];
+		];*/
 	}
 
     public $basePath = '@webroot';
