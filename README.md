@@ -16,6 +16,10 @@
 		"alhimik1986/yii2_settings_module": "1.0.x-dev"
     },
 ```
+или в командой строке ввести:
+```
+$ composer require alhimik1986/yii2_settings_module
+```
 В файле config/web.php прописать настройки:
 ```
 $config = [
