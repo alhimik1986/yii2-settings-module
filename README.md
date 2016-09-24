@@ -68,7 +68,7 @@ Yii::$app->settings->set('password', '1234243'); // Меняем значени�
 {
 	"db": {
 		"value": {
-			"connectionString": "sqlite:..\/..\/..\/application\/basic\/data\/database.s3db",
+			"connectionString": "sqlite:@app\/data\/database.s3db",
 			"username": "",
 			"password": "",
 			"tablePrefix": "",
@@ -82,7 +82,7 @@ Yii::$app->settings->set('password', '1234243'); // Меняем значени�
 То $db будет равен:
 ```
 [
-	'connectionString' => 'sqlite:../../../application/data/database.s3db',
+	'connectionString' => 'sqlite:@app/data/database.s3db',
 	'username'         => '',
 	'password'         => '',
 	'tablePrefix'      => '',
